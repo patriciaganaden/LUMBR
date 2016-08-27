@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS tree(
 	conservationStatus VARCHAR(16),
 	uses VARCHAR(128),
 	seedType VARCHAR(16),
-	seedCount INT(5)
+	seedCount INT(6)
 );
 
 CREATE TABLE IF NOT EXISTS phenology(
@@ -59,6 +59,7 @@ CREATE TABLE IF NOT EXISTS plantedTree(
 
 CREATE TABLE IF NOT EXISTS report(
 	report_id INT AUTO_INCREMENT PRIMARY KEY,
+	treeName VARCHAR(64) NOT NULL,
 	employerUname VARCHAR(32) NOT NULL,
 	employeeUname VARCHAR(32) NOT NULL,
 	reportTxt VARCHAR(256) NOT NULL,

@@ -36,6 +36,17 @@ exports.insert = function(req, res, next) {
   });
 };
 
+exports.findSome = function(req, res, next) {
+  db.query("SELECT * FROM report LEFT JOIN (plantedTree) ON (plantedTree.treeName=report.treeName ) where plantedTree_id = ?", [req.params.plantedTree_id], function(err, rows) {
+    if (err) return next(err);
+    if (rows.length === 0) {
+      res.send(404, {message: 'report not found.'});
+    } else {
+      res.send(rows);
+    }
+  });
+};
+
 exports.findGivenEmployerUname = function(req, res, next) {
   db.query("SELECT * FROM report WHERE employerUname=?", [req.params.employerUname], function(err, rows) {
     if (err) return next(err);
@@ -50,6 +61,17 @@ exports.findGivenEmployerUname = function(req, res, next) {
 
 exports.findGivenEmployeeUname = function(req, res, next) {
   db.query("SELECT * FROM report WHERE employeeUname=?", [req.params.employeeUname], function(err, rows) {
+    if (err) return next(err);
+    if (rows.length === 0) {
+      res.send(404, {message: 'report not found.'});
+    } else {
+      res.send(rows[0]);
+    }
+  });
+};
+
+exports.findGivenTreeName = function(req, res, next) {
+  db.query("SELECT * FROM report WHERE treeName=?", [req.params.treeName], function(err, rows) {
     if (err) return next(err);
     if (rows.length === 0) {
       res.send(404, {message: 'report not found.'});

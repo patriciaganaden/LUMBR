@@ -1,19 +1,21 @@
 'use strict';
 (function () {
+	/* Randomize App */
 	angular
 	.module("app")
-	.factory("HomeService", HomeService);
+	/* Randomize Service Provider */
+	.factory("TreeLibService", TreeLibService);
 
-	HomeService.$inject = ["$http", "$q"];
+	TreeLibService.$inject = ["$http", "$q"];
 
-	function HomeService($http, $q) {
-		var url = document.location.origin + "/home";
+	function TreeLibService($http, $q) {
+		var url = document.location.origin;
 		var service = {};
-
-		function getTree(){
+		
+		function getAllTrees(){
 			var deferred = $q.defer();
 
-			var completeUrl = url + "/tree";
+			var completeUrl = url + "/trees";
 
 			$http.get(completeUrl)
 			.success(function (data) {
@@ -24,12 +26,9 @@
 			});
 			return deferred.promise;
 		}
-
-		service.getTree = getTree;
+		service.getAllTrees = getAllTrees;
 
 		/* RETURN SERVICE */
 		return service;
 	}
-
-
 })();

@@ -1,0 +1,138 @@
+ <style>
+  #map {
+    margin-top: 1%;
+    margin-left: 24%;
+    width: 73%;
+    height: 650px;
+  }
+</style>
+
+<nav>
+  <div class="nav-wrapper brown darken-3">
+    <a href="#/dashboard" class="brand-logo right">LUMBR &nbsp&nbsp</a>
+    <a href="#" data-activates="slide-out" class="button-collapse left"><i class="material-icons">&nbsp&nbsp menu</i></a>
+  </div>
+</nav>
+
+<ul id="slide-out" class="side-nav fixed">
+
+  <div class="card-panel">
+    <span style="font-weight:bold;font-size:17px;">Land Capability Classification</span>
+    <p>Layers such as rainfall, land cover, temperature, elevation, and watershed bounderies are over-laid to create a land capability classification. It designates whether the area is Strictly Protected Zone, Buffer Zone, and Transition Zone.</p>
+  </div>
+
+  <ul class="collection">
+    <li class="collection-item avatar">
+      <i class="material-icons circle blue">insert_chart</i>
+      <span class="title">Rainfall layer</span>
+        <div class="switch">
+          <label>
+          Off
+          <input type="checkbox" id="rainfall" onclick="initMap()">
+          <span class="lever"></span>
+          On
+          </label>
+        </div>
+    </li>
+    <li class="collection-item avatar">
+       <i class="material-icons circle brown">insert_chart</i>
+      <span class="title">Land Cover layer</span>
+        <div class="switch">
+          <label>
+          Off
+          <input disabled type="checkbox">
+          <span class="lever"></span>
+          On
+          </label>
+        </div>
+    </li>
+    <li class="collection-item avatar">
+      <i class="material-icons circle red">insert_chart</i>
+      <span class="title">Temperature layer</span>
+        <div class="switch">
+          <label>
+          Off
+          <input disabled type="checkbox">
+          <span class="lever"></span>
+          On
+          </label>
+        </div>
+    </li>
+    <li class="collection-item avatar">
+       <i class="material-icons circle green">insert_chart</i>
+      <span class="title">Elevation layer</span>
+        <div class="switch">
+          <label>
+          Off
+          <input disabled type="checkbox">
+          <span class="lever"></span>
+          On
+          </label>
+        </div>
+    </li>
+    <li class="collection-item avatar">
+       <i class="material-icons circle orange">insert_chart</i>
+      <span class="title">Bounderies layer</span>
+        <div class="switch">
+          <label>
+          Off
+          <input disabled type="checkbox">
+          <span class="lever"></span>
+          On
+          </label>
+        </div>
+    </li>
+  </ul>
+
+</ul>
+
+<div id="map"></div>
+
+<script>
+  function initMap() {
+    var mapDiv = document.getElementById('map');
+    var map = new google.maps.Map(mapDiv, {
+      center: {lat: 12.8797, lng: 121.7740},
+      mapTypeId: google.maps.MapTypeId.TERRAIN,
+      zoom: 6,
+      maxZoom: 13,
+      minZoom: 6
+    });
+
+    var drawingManager = new google.maps.drawing.DrawingManager({
+      drawingMode: google.maps.drawing.OverlayType.MARKER,
+      drawingControl: true,
+      drawingControlOptions: {
+        position: google.maps.ControlPosition.TOP_CENTER,
+        drawingModes: ['marker', 'circle', 'polygon', 'polyline', 'rectangle']
+      },
+      markerOptions: {icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'},
+      circleOptions: {
+        fillColor: '#ffff00',
+        fillOpacity: 1,
+        strokeWeight: 5,
+        clickable: false,
+        editable: true,
+        zIndex: 1
+      }
+    });
+    drawingManager.setMap(map);
+
+    var ctaLayer = new google.maps.KmlLayer({
+      url: 'https://www.google.com/maps/d/u/0/kml?hl=en&authuser=0&mid=1axKCieLuCuwaCTGQ6BdFBvecerQ&nl=1&forcekml=1&cid=mp&cv=iGCqbo23j9Y.en.%20Show%20in%20folder%20%20%E2%9C%95'
+    });
+
+    // Shows the layer of Rainfall (for the meantime since no other data is available)
+    var answerSwitch = document.getElementById('rainfall').checked;
+    if(answerSwitch){
+      ctaLayer.setMap(map);
+      console.log("hello");
+    } else{
+      ctaLayer.setMap(null);
+    }
+
+  }
+
+</script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv9M3dz9S83BV0FoNby-KQs_pkp_g01J0&callback=initMap&libraries=drawing"></script>

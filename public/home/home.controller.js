@@ -7,6 +7,5 @@
 		
 	HomeCtrl.$inject = ["$scope", "$location"];
 	function HomeCtrl($scope, $location){
-		console.log("HEY");
 	}
 })();

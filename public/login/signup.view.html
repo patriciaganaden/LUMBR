@@ -1,0 +1,65 @@
+   <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper green darken-3" style="padding-top:1px; padding-left:10px;">
+          <div class="col s12">
+            <a href="" class="brand-logo">App Name</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="container" style="padding-top:60px;">
+      <div class="login-box white">
+        <center>
+          <img src="images/1.jpeg" width="200px;" height="200px;">
+        </center>
+
+        <div class="row">
+          <form class="col s12" ng-submit="register()">
+            <div class="row">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">account_circle</i>
+                <input type="text" id="icon_prefix" type="text" class="validate" ng-model="su.username">
+                <label for="icon_prefix">&emsp;Username</label>
+              </div>
+            
+            <div class="input-field col s12">
+                <i class="material-icons prefix">lock_outline</i>
+                <input type="password" id="icon_prefix" type="text" class="validate" ng-model="su.password">
+                <label for="icon_prefix">&emsp;Password</label>
+              </div>
+            </div>
+
+            <div class="input-field col s12">
+                <input type="text" id="icon_prefix" type="text" class="validate" ng-model="su.fullname">
+                <label for="icon_prefix">&emsp;Full Name</label>
+            </div>
+
+            <div class="input-field col s12">
+                <input type="text" id="icon_prefix" type="text" class="validate" ng-model="su.email">
+                <label for="icon_prefix">&emsp;Email</label>
+            </div>
+
+            <div class="input-field col s12">
+                <input type="text" id="icon_prefix" type="text" class="validate" ng-model="su.cpNumber">
+                <label for="icon_prefix">&emsp;Cellphone Number</label>
+            </div>
+
+            <div class="input-field col s12">
+                <input type="text" id="icon_prefix" type="text" class="validate" ng-model="su.type">
+                <label for="icon_prefix">&emsp;Type</label>
+            </div>
+
+            <div class="row" align="center">
+            <button type="submit" class="btn green darken-4">SIGN UP</button>
+            <br/><br/>
+            Already have an account?
+            <a href="/#/login" class="green-text">Log in.</a>
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+    </div>

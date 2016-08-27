@@ -1,0 +1,66 @@
+<nav>
+  <div class="nav-wrapper brown darken-3">
+    <a href="#/dashboard"> &nbsp&nbsp LUMBR</a>
+    <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="#/dashboard">Hi {{username}}!</a></li>
+      <li><a href="#/login" ng-click="logout()">Log-Out</a></li>
+    </ul> 
+    <ul class="side-nav" id="mobile-menu">
+      <li><a href="#/dashboard">Dashboard</a></li>
+      <li><a href="#/login" ng-click="logout()">Log-Out</a></li>
+    </ul>
+  </div>
+</nav>
+
+   <div class="manager">
+      <div class="row">
+        <div class="col s4">
+          <img src="../images/1.jpeg" width="300px;" height="300px;">
+        </div>
+
+        <div class="col s4">
+          <div class="row">
+            Description<br/>
+            <p><span class="label">Name: </span>{{resultData.treeName}}</p>
+            <p><span class="label">Scientific name: </span>{{resultData.scientificName}}</p>
+            <p><span class="label">Family name: </span>{{resultData.familyName}}</p>
+            <p><span class="label">Conservation Status: </span>{{resultData.conservationStatus}}</p>
+            <p><span class="label">Uses: </span>{{resultData.uses}}</p>
+            <p><span class="label">Seed Type: </span>{{resultData.seedType}}</p>
+            <p><span class="label">Seed Count: </span>{{resultData.seedCount}}</p>
+          </div>
+
+          <div class="row">
+            Reports (accordion)
+            <p ng-repeat="report in reports">
+              {{report.reportTxt}}
+              {{report.reportImg}}
+              {{report.dateReported | date: 'MM/dd/yyyy'}}
+            </p>
+          </div>
+        </div>
+
+        <div class="col s4" align="right">
+          <ul class="collapsible steward" data-collapsible="accordion">
+            <li class="steward">
+              <div class="collapsible-header steward tooltipped" data-position="top" data-delay="50" data-tooltip="Steward information">
+              <img src="../images/1.jpeg" width="150px" height="150px;">
+              </div>
+              <div class="collapsible-body white" align="left">
+                <p>
+                  Name: {{steward.fullname}}<br/>
+                  E-mail: {{steward.email}}<br/>
+                  Contact No.: {{steward.cpNumber}}
+                </p>
+              </div>
+            </li>
+          </ul>
+              <p>
+                  Name: {{steward.fullname}}<br/>
+                  E-mail: {{steward.email}}<br/>
+                  Contact No.: {{steward.cpNumber}}
+              </p>
+        </div>
+      </div>
+    </div>

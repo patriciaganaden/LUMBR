@@ -1,0 +1,38 @@
+<nav>
+  <div class="nav-wrapper brown darken-3">
+    <a href="#/dashboard"> &nbsp&nbsp LUMBR</a>
+    <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="#/dashboard">Hi {{username}}!</a></li>
+      <li><a href="#/login" ng-click="logout()">Log-Out</a></li>
+    </ul> 
+    <ul class="side-nav" id="mobile-menu">
+      <li><a href="#/dashboard">Dashboard</a></li>
+      <li><a href="#/login" ng-click="logout()">Log-Out</a></li>
+    </ul>
+  </div>
+</nav>
+
+    <div class="container" style="padding-top:60px;">
+        <div class="row">
+          <div class="col s4" ng-repeat="plantedTree in plantedTrees">
+            <div class="card">
+              <div class="card-image">
+                <img src="../images/1.jpeg">
+                <span class="card-title">
+                  <a href="#/dashboard/programManager/{{plantedTree.plantedtree_id}}">{{plantedTree.treeName}}</a>
+                </span>
+              </div>
+              <div class="card-content">
+                <p>
+                  Name: {{plantedTree.treeName}}<br/>
+                  Owner: {{plantedTree.owner}}<br/>
+                  Steward: {{plantedTree.plantedBy}}<br/>
+                  Date Planted: {{plantedTree.datePlanted | date: 'MM/dd/yyyy'}}<br/>
+                  Status: {{plantedTree.status}}<br/>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>

@@ -36,6 +36,17 @@ exports.insert = function(req, res, next) {
   });
 };
 
+exports.findOne = function(req, res, next) {
+  db.query("SELECT * FROM plantedTree LEFT JOIN (tree, user) ON (tree.treeName=plantedTree.treeName AND user.username=plantedTree.plantedBy) where plantedTree_id = ?", [req.params.plantedTree_id], function(err, rows) {
+    if (err) return next(err);
+    if (rows.length === 0) {
+      res.send(404, {message: 'planted tree not found.'});
+    } else {
+      res.send(rows[0]);
+    }
+  });
+};
+
 exports.findGivenTreeName = function(req, res, next) {
   db.query("SELECT * FROM plantedTree WHERE treeName=?", [req.params.treeName], function(err, rows) {
     if (err) return next(err);

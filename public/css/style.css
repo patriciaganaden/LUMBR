@@ -1,0 +1,62 @@
+body {
+	background-color: #dcedc8;
+}
+
+.input-field label {
+	color: #a1887f;
+}
+
+.input-field input[type=text]:focus + label {
+	color: #a1887f;
+}
+
+.input-field input[type=text]:focus {
+	 border-bottom: 1px solid #a1887f;
+	 box-shadow: 0 1px 0 0 #a1887f;
+}
+
+.input-field .prefix.active {
+	color: #a1887f;
+}
+
+.option {
+	width: 275px;
+	height: 500px;
+	float: left;
+}
+
+.menu {
+	width: 250px;
+	height: 250px;
+	background-color: #000000;
+	float: left;
+	margin-left: 20px;
+	margin-right: 20px;
+	padding: 20px;
+	padding-top: 200px;
+	font-size: 25px;
+}
+
+.menu a {
+	color: white;
+}
+
+.dashboard {
+	padding: 100px;
+	padding-top: 125px;
+}
+
+.desc {
+	padding: 20px;
+	font-size: 14px;
+	float: left;
+}
+
+.manager {
+	padding: 100px;
+}
+
+.steward {
+	width: 200px;
+	height: 200px;
+}

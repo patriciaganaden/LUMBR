@@ -1,5 +1,16 @@
 var db = require(__dirname + '/../lib/mysql');
 
+exports.login = function (req, res, next) {
+  db.query("SELECT * FROM user WHERE username = ? and password = ?", [req.params.username ,req.params.password], function (err, rows) {
+      if (err) return next(err);
+      if (rows.length === 0) {
+        res.status(404).send({status:'failure', message:'Username ('+req.params.username+') does not exist!'});
+      } else {
+        res.send(rows[0]);
+      }
+    });
+}
+
 exports.find = function(req,res,next){
   db.query("SELECT * FROM user",
     function(err,rows){
@@ -41,6 +52,17 @@ exports.insert = function(req, res, next) {
 
 exports.findOne = function(req, res, next) {
   db.query("SELECT * FROM user WHERE username=?", [req.params.username], function(err, rows) {
+    if (err) return next(err);
+    if (rows.length === 0) {
+      res.send(404, {message: 'user not found.'});
+    } else {
+      res.send(rows[0]);
+    }
+  });
+};
+
+exports.findUser = function(req, res, next) {
+  db.query("SELECT * FROM plantedTree LEFT JOIN (user) ON (user.username=plantedTree.plantedBy ) where plantedTree_id = ?", [req.params.plantedTree_id], function(err, rows) {
     if (err) return next(err);
     if (rows.length === 0) {
       res.send(404, {message: 'user not found.'});

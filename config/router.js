@@ -7,6 +7,13 @@ var seedStores = require('./../controllers/seedstores');
 
 module.exports = function(router){
 
+	/** LOGIN **/
+
+	router.route('/login/:username/:password')
+		.get(user.login);
+	router.route('/signup')
+		.post(user.insert);
+
 	/** TREES ***/
 
 	router.route('/trees')
@@ -40,13 +47,17 @@ module.exports = function(router){
 	.put(user.update)
 	.delete(user.remove);
 
+	router.route('/user/plantedTree/:plantedTree_id')
+	.get(user.findUser);
+
 	/** PLANTED TREE **/
 
 	router.route('/plantedTree')
 	.get(plantedTree.find)
 	.post(plantedTree.insert);
 
-	router.route('/plantedTree/:plantedtree_id')
+	router.route('/plantedTree/:plantedTree_id')
+	.get(plantedTree.findOne)
 	.put(plantedTree.update)
 	.delete(plantedTree.remove);
 
@@ -65,11 +76,17 @@ module.exports = function(router){
 	.get(report.find)
 	.post(report.insert);
 
+	router.route('/report/byPlantedTreeId/:plantedTree_id')
+	.get(report.findSome);
+
 	router.route('/report/byEmployerName/:employerUname')
 	.get(report.findGivenEmployerUname);
 
 	router.route('/report/byEmployeeName/:employeeUname')
 	.get(report.findGivenEmployeeUname);
+
+	router.route('/report/byTreeName/:treeName')
+	.get(report.findGivenTreeName);
 
 	router.route('/report/:report_id')
 	.delete(report.remove);
