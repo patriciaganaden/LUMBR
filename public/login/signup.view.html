@@ -1,22 +1,21 @@
+   
    <div class="navbar-fixed">
       <nav>
-        <div class="nav-wrapper green darken-3" style="padding-top:1px; padding-left:10px;">
+        <div class="nav-wrapper brown darken-3" style="padding-top:1px; padding-left:10px;">
           <div class="col s12">
-            <a href="" class="brand-logo">App Name</a>
+            <a href="" class="brand-logo">LUMBR</a>
+            <ul class="right hide-on-med-and-down">
+              <li><a href="/#/login">&emsp;LOG IN&emsp;</a></li>
+            </ul>
           </div>
         </div>
       </nav>
     </div>
 
-    <div class="container" style="padding-top:60px;">
-      <div class="login-box white">
-        <center>
-          <img src="images/1.jpeg" width="200px;" height="200px;">
-        </center>
-
+    <div class="container" style="padding-top:1%;">
+      <div class="signup-box white">
         <div class="row">
           <form class="col s12" ng-submit="register()">
-            <div class="row">
               <div class="input-field col s12">
                 <i class="material-icons prefix">account_circle</i>
                 <input type="text" id="icon_prefix" type="text" class="validate" ng-model="su.username">
@@ -28,38 +27,50 @@
                 <input type="password" id="icon_prefix" type="text" class="validate" ng-model="su.password">
                 <label for="icon_prefix">&emsp;Password</label>
               </div>
-            </div>
 
-            <div class="input-field col s12">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">recent_actors</i>
                 <input type="text" id="icon_prefix" type="text" class="validate" ng-model="su.fullname">
                 <label for="icon_prefix">&emsp;Full Name</label>
             </div>
 
             <div class="input-field col s12">
+                <i class="material-icons prefix">markunread_mailbox</i>
                 <input type="text" id="icon_prefix" type="text" class="validate" ng-model="su.email">
                 <label for="icon_prefix">&emsp;Email</label>
             </div>
 
             <div class="input-field col s12">
+                <i class="material-icons prefix">dialpad</i>
                 <input type="text" id="icon_prefix" type="text" class="validate" ng-model="su.cpNumber">
                 <label for="icon_prefix">&emsp;Cellphone Number</label>
             </div>
 
             <div class="input-field col s12">
-                <input type="text" id="icon_prefix" type="text" class="validate" ng-model="su.type">
-                <label for="icon_prefix">&emsp;Type</label>
+              <i class="material-icons prefix">info_outline</i>
+              <select>
+                <option value="1">Owner</option>
+                <option value="2">Steward</option>
+              </select>
+              <label>Account Type</label>
+            </div>
+
             </div>
 
             <div class="row" align="center">
-            <button type="submit" class="btn green darken-4">SIGN UP</button>
+            <button type="submit" class="btn brown darken-2">SIGN UP</button>
             <br/><br/>
             Already have an account?
-            <a href="/#/login" class="green-text">Log in.</a>
+            <a href="/#/login" class="brown-text lighten-2">Log in.</a>
             </div>
 
           </form>
-
         </div>
-
       </div>
     </div>
+
+<script type="text/javascript">
+   $(document).ready(function() {
+      $('select').material_select();
+    });  
+</script>

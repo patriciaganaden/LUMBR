@@ -50,7 +50,7 @@
 				LoginService.ValidateUser(login_user.username, login_user.password)
 				// if successful or status code == 200
 				.then(function (res) {
-					Materialize.toast("Logging you in!", 2000, 'rounded');
+					Materialize.toast("Successfully logged in!", 2000, 'rounded');
 					$location.path('/dashboard');
 					$cookies.put('user', login_user.username);
 				})

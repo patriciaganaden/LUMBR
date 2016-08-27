@@ -15,15 +15,15 @@
 
 <nav>
   <div class="nav-wrapper brown darken-3">
-    <a href="#/dashboard"> &nbsp&nbsp LUMBR</a>
+    <a class="brand-logo" href="#/dashboard"> &nbsp&nbsp LUMBR</a>
     <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
       <li><a href="#/dashboard">Hi {{username}}!</a></li>
-      <li><a href="#/login" ng-click="logout()">Log-Out</a></li>
+      <li><a href="#/login" ng-click="logout()">Log out</a></li>
     </ul> 
     <ul class="side-nav" id="mobile-menu">
       <li><a href="#/dashboard">Dashboard</a></li>
-      <li><a href="#/login" ng-click="logout()">Log-Out</a></li>
+      <li><a href="#/login" ng-click="logout()">Log out</a></li>
     </ul>
   </div>
 </nav>
@@ -38,13 +38,13 @@
         </div>
         <div class="input-field col s6">
           <select id="filterresults" ng-model="filterText.type">
-            <option value="" disabled selected>Choose your option</option>
+            <option value="" disabled selected>Choose land classification</option>
             <option value="Ecological Protection">Ecological Protection</option>
             <option value="Utilization">Utilization</option>
             <option value="Flowering">Flowering</option>
             <option value="Non-timber Forest Products">Non-timber Forest Products</option>
           </select>
-          <label>Materialize Select</label>
+          <label>Land Classification</label>
         </div>
       </div>
 

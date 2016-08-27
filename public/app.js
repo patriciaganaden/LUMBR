@@ -40,7 +40,7 @@
 				"controller": "MapCtrl",
 				"templateUrl": "/dashboard/map/map.view.html" })
 
-			.otherwise({"redirectTo": "/login"});
+			.otherwise({"redirectTo": "/home"});
 	}
 
 })();
