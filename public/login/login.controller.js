@@ -52,7 +52,9 @@
 				.then(function (res) {
 					Materialize.toast("Successfully logged in!", 2000, 'rounded');
 					$location.path('/dashboard');
-					$cookies.put('user', login_user.username);
+					$cookies.put('user', res.username);
+					$cookies.put('type', res.type);
+					console.log($cookies.get('type'));
 				})
 				// if failure or status code = 404, 401, etc.
 				.catch(function (res) {
