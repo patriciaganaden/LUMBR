@@ -9,6 +9,10 @@ exports.find = function(req,res,next){
 };
 
 exports.insert = function(req, res, next) {
+  console.log(req.body);
+  if (!req.body.treeName) {
+    return res.send(451, {'error': true, 'message': 'Missing parameter: treeName'});
+  }
   if (!req.body.employerUname) {
     return res.send(451, {'error': true, 'message': 'Missing parameter: employerUname'});
   }
@@ -18,18 +22,14 @@ exports.insert = function(req, res, next) {
   if (!req.body.reportTxt) {
     return res.send(451, {'error': true, 'message': 'Missing parameter: reportTxt'});
   }
-  if (!req.body.reportImg) {
-    return res.send(451, {'error': true, 'message': 'Missing parameter: reportImg'});
-  }
-  if (!req.body.dateReported) {
-    return res.send(451, {'error': true, 'message': 'Missing parameter: dateReported'});
-  }
-  db.query("INSERT INTO report(employerUname, employeeUname, reportTxt, reportImg, dateReported) VALUES(?, ?, ?, ?, ?)", [req.body.employerUname, req.body.employeeUname, req.body.reportTxt, req.body.reportImg, req.body.dateReported], function(err, row) {
+  db.query("INSERT INTO report(treeName, employerUname, employeeUname, reportTxt) VALUES(?, ?, ?, ?)", [req.body.treeName, req.body.employerUname, req.body.employeeUname, req.body.reportTxt], function(err, row) {
     if (err) return next(err);
-    selectOne(row.report_id, function(newRow) {
+    console.log("HH");
+    selectOne(row.insertId, function(newRow) {
       if (!newRow) {
-        res.send(552, {message: 'report ('+row.report_id+') was not created.'});
+        res.send(552, {message: 'report ('+row.insertId+') was not created.'});
       } else {
+        console.log(newRow);
         res.send(newRow);
       }
     });

@@ -30,9 +30,15 @@
 			.when("/dashboard/programManager", {
 				"controller": "ProgramManagerCtrl",
 				"templateUrl": "/dashboard/program-manager/program-manager.view.html" })
+			.when("/dashboard/programManagerSteward", {
+				"controller": "ProgramManagerStewardCtrl",
+				"templateUrl": "/dashboard/program-manager/program-manager-steward.view.html" })
 			.when("/dashboard/programManager/:plantedTree_id", {
 				"controller": "PlantedTreeCtrl",
 				"templateUrl": "/dashboard/program-manager/planted-tree.view.html" })
+			.when("/dashboard/programManagersteward/:plantedTree_id", {
+				"controller": "PlantedTreeStewardCtrl",
+				"templateUrl": "/dashboard/program-manager/planted-tree-steward.view.html" })
 			.when("/dashboard/agroForestrySystem", {
 				"controller": "AgroForestrySystemCtrl",
 				"templateUrl": "/dashboard/agro-forestry-system/agro-forestry-system.view.html" })
@@ -40,7 +46,7 @@
 				"controller": "MapCtrl",
 				"templateUrl": "/dashboard/map/map.view.html" })
 
-			.otherwise({"redirectTo": "/home"});
+			.otherwise({"redirectTo": "/dashboard"});
 	}
 
 })();

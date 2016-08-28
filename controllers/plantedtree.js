@@ -65,7 +65,7 @@ exports.findGivenOwner = function(req, res, next) {
     if (rows.length === 0) {
       res.send(404, {message: 'planted tree not found.'});
     } else {
-      res.send(rows[0]);
+      res.send(rows);
     }
   });
 };
@@ -76,7 +76,7 @@ exports.findGivenPlantedBy = function(req, res, next) {
     if (rows.length === 0) {
       res.send(404, {message: 'planted tree not found.'});
     } else {
-      res.send(rows[0]);
+      res.send(rows);
     }
   });
 };

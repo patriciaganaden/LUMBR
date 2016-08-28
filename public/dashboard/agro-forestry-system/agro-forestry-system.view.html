@@ -15,7 +15,7 @@
 
 <nav>
   <div class="nav-wrapper brown darken-3">
-    <a href="#/dashboard"> &nbsp&nbsp LUMBR</a>
+    <a href="#/dashboard" class="brand-logo"> &nbsp&nbsp LUMBR</a>
     <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
       <li><a href="#/dashboard">Hi {{username}}!</a></li>
@@ -27,14 +27,112 @@
   </div>
 </nav>
   
-<div class="container">
+<div class="container" style="padding-top:10px;">
+  <h4><strong> AGROFORESTRY SYSTEMS </strong></h4>
   <div class="row">
-     
+      <div class="col s12">
+          <ul class="tabs brown lighten-1">
+          <li class="tab col s3"><a class="active white-text" href="#salt1">SALT 1</a></li>
+          <li class="tab col s3"><a class="white-text" href="#salt2">SALT 2</a></li>
+          <li class="tab col s3"><a class="white-text" href="#salt3">SALT 3</a></li>
+          <li class="tab col s3"><a class="white-text" href="#salt4">SALT 4</a></li>
+          <div class="indicator brown darken-4" style="z-index:1"></div>
+        </ul>
+      </div>
+
+      <div id="salt1" class="col s12">
+        
+        <h5>Sloping Agricultural Land Technology (SALT 1)</h5>
+        <p>A diverse farming system where permanent crops like cereals, upland rice and sweet potato are planted in between rows of shrubs like cacao, citrus and other fruit-bearing trees. The rotational cropping enables the farmer to earn all throughout the year. SALT 1 also includes the plantation of trees for timber and fuelwood upon its boundaries.</p>
+
+        <div class="col s6">
+           <h6><strong>Steps in establishing Sloping Agricultural Land Technology (SALT 1)</strong></h6>
+          1.    Locate the contour lines of your field using the A-frame. The A-frame is the simplest and least expensive but most accurate instrument in identifying the contour.<br>
+          2.    Prepare the contour lines for planting by sowing and plowing.<br/>
+          3.    Plant nitrogenous plants like legumes and shrubs. Nitrogenous plants helps improve the soil quality while hedgerows will help prevent soil erosion.<br/>
+          4.    Plant crops in alternative strips.<br/>
+          5.    Plant short or medium period crops so that income can flow throughout the year.<br/>
+          6.    Regularly trim your nitrogenous trees and shrubs.<br/>
+          7.    Practice crop rotation to maintain soil fertility. <br/>
+          8.    Maintain SALT 1 farm.<br/>
+        </div>
+
+        <div class="col s6">
+          <img src="images/salt1.png" width="100%">
+        </div>
+      </div>
+
+      <div id="salt2" class="col s12">
+        
+        <h5>Simple Agro-livestock Technology (SALT 2)</h5>
+        <p>This system combines forest trees, crops and livestock. Integration of firewood production from hedgerows, fruit trees, agricultural crops such as citrus, peanuts and rice as well as livestock raising is the center of this system.</p>
+        
+        <div class="col s6">
+          <h6><strong>Steps in establishing Simple Agro-livestock Technology (SALT 2)</strong></h6>
+          1.    Locate your contour lines.<br/>
+          2.    Establish hedgerows along the contours.<br/>
+          3.    Plant food and cash crops like kakawate, coffee and calamansi.<br/>
+          4.    Build a forage garden for your livestock.<br/>
+          5.    Build a livestock farm.<br/>
+          6.    Feed your livestock at a right time.<br/>
+          7.    Breed the livestock at the right time.<br/>
+          8.    Sell all products including those that you have obtained from your livestock like milk and eggs.<br/>
+          9.    Maintain SALT 2.<br/>
+        </div>
+
+        <div class="col s6">
+          <img src="images/salt2.gif" width="100%;">
+        </div>
+      </div>
+
+      <div id="salt3" class="col s12">
+        
+        <h5>Sustainable Agroforest Land Technology (SALT 3)</h5>
+        <p>Small reforestation program dedicated to food production. The farm is devoted to about 40 percent agriculture and 60 percent forestry.</p>
+        
+         <div class="col s6">
+          <h6><strong>Steps in establishing Sustainable Agroforest Land Technology (SALT 3)</strong></h6>
+          1.    Build your nursery. <br/>
+          2.    Tend and manage the seedlings carefully.<br/>
+          3.    Locate your contour lines and plant food crops at the lower part of the field.<br/>
+          4.    Prepare the location where you will plant your wood crops or trees.<br/>
+          5.    Plant and intercrop your trees.<br/>
+          6.    Do timber stand improvement.<br/>
+          7.    Regularly harvest agroforest products.<br/>
+          8.    Maintain your SALT 3 farm.<br/>
+        </div>
+
+          <div class="col s6">
+            <img src="images/salt3.gif" width="100%;">
+          </div>
+      </div>
+
+      <div id="salt4" class="col s12">
+        
+        <h5>Small Agrofruit Livelihood Technology (SALT 4)</h5>
+        <p>The system aims plant and produce more fruit-bearing trees. Its objective is to increase the production of fruits and increase the income of farmers since fruits are easy-to-market products. </p>
+        
+        <div class="col s6">
+          <h6><strong>Steps in establishing Small Agrofruit Livelihood Technology (SALT 4)</strong></h6>
+          1.    Build a nursery at the center of your farm. <br/>
+          2.    Prepare planting materials for Fruit trees.<br/>
+          3.    Locate the contour lines and establish the hedgerows.<br/>
+          4.    Plant the food crops at the lower part of the farm.<br/>
+          5.    Plant the fruit trees covering 2/3 of the farm.<br/>
+          6.    Practice rotation cropping.<br/>
+          7.    Regularly trim your hedgerows.<br/>
+          8.    Harvest and sell all products.<br/>
+          9.    Maintain SALT 4.<br/>
+        </div>
+
+        <div class="col s6">
+            <img src="images/salt4.gif" width="100%;">
+          </div>
+      </div>
   </div>
 </div>
-
 <script type="text/javascript">
-  $(document).ready(function() {
-    $('select').material_select();
+   $(document).ready(function(){
+    $('ul.tabs').tabs();
   });
 </script>

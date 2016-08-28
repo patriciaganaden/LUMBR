@@ -2,7 +2,7 @@
   <div class="nav-wrapper brown darken-3">
 
     <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
-    <a href="" class="brand-logo">&emsp;LUMBR
+    <a href="#/dashboard" class="brand-logo">&nbsp&nbsp LUMBR
     <ul class="right hide-on-med-and-down">
       <li><a href="#/dashboard">Hi {{username}}!</a></li>
       <li><a href="#/login" ng-click="logout()">Log out</a></li>
@@ -13,41 +13,52 @@
   </div>
 </nav>
 
-    <div class="dashboard">
-      <div class="option" hoverable>
-        <div class="menu" style="background-image: url('../images/2.jpg'); padding-top:175px;">
-          <a href="#/dashboard/landClassification">Land Capability Classification</a>
-        </div>
+    <div class="dashboard row">
+      <div class="col s3">
+        <a href="#/dashboard/landClassification">
+          <div class="menu white-text" style="background-image: url('../images/1.png'); padding-top:175px;">
+            Land Capability Classification
+          </div></a>
 
         <div class="desc">
             Thematic maps such as rainfall, temperature, elevation, elevation, forest covers and watershed managements are over-laid to create a land capability classification. It designates whether the area is Strictly Protected Zone, Buffer Zone, and Transition Zone.
           </div>
       </div>
 
-      <div class="option">
-        <div class="menu" style="background-image: url('../images/2.jpg');">
-          <a href="#/dashboard/tree-library">Tree Library</a>
-        </div>
+      <div class="col s3">
+        <a href="#/dashboard/tree-library">
+          <div class="menu white-text" style="background-image: url('../images/2.png');">
+            Tree Library
+          </div></a>
 
         <div class="desc">
             The Tree Library shows the different native or fruit-bearing trees species as well as its uses, phenology, seed type, and seed extraction protocols.
           </div>
       </div>
 
-      <div class="option">
-        <div class="menu" style="background-image: url('../images/2.jpg');">
-          <a href="#/dashboard/programManager">Program Manager</a>
-        </div>
+      <div class="col s3">
+        <a href="#/dashboard/programManager" ng-show="type == employer" >
+           <div class="menu white-text" style="background-image: url('../images/3.png');">
+              Program Manager
+            </div>
+        </a>
+        <a href="#/dashboard/programManagerSteward" ng-show="type == employee" >
+         <div class="menu white-text" style="background-image: url('../images/3.png');">
+              Program Manager
+            </div>
+        </a>
 
         <div class="desc">
             The program manager heads the project on reforestation and sustainable development. He/she is the one that decides on what species will be planted on the site.
           </div>
       </div>
 
-      <div class="option">
-        <div class="menu" style="background-image: url('../images/2.jpg'); padding-top:175px;">
-          <a href="#/dashboard/agroForestrySystem">Agroforestry Technologies</a>
-        </div>
+      <div class="col s3">
+        <a href="#/dashboard/agroForestrySystem">
+          <div class="menu white-text" style="background-image: url('../images/4.png'); padding-top:175px;">
+            Agroforestry Technologies
+          </div>
+        </a>
 
         <div class="desc">
             Agroforestry system is the management of forest trees with crops and prairies. It promotes a more productive, eco-friendly and sustainable land use system.

@@ -1,9 +1,7 @@
 'use strict';
 (function () {
-	// Guest App
 	angular
 	.module("app")
-	// Guest Controller
 	.controller("LoginCtrl", LoginCtrl);
 
 	// Inject dependencies to controller --------------------
@@ -12,9 +10,6 @@
 	// LoginService - for asynchronous functions
 	LoginCtrl.$inject = ["$scope", "$window", "LoginService", "$location", "$cookies"];
 
-	/**************************
-		GUEST CONTROLLER
-	**************************/
 	function LoginCtrl($scope, $window, LoginService, $location, $cookies){
 
 		// Checks the cookie if a user data is stored
@@ -54,7 +49,6 @@
 					$location.path('/dashboard');
 					$cookies.put('user', res.username);
 					$cookies.put('type', res.type);
-					console.log($cookies.get('type'));
 				})
 				// if failure or status code = 404, 401, etc.
 				.catch(function (res) {
@@ -69,20 +63,34 @@
 
 		// function that will handle signup
 		$scope.signup = function () {
-			LoginService.CreateAnAccount($scope.su)
+
+			$scope.type = $("#type option:selected").text();
+			if(type == "Owner") $scope.type = 'employer';
+			else $scope.type = 'employee';
+
+			$scope.newUser = {
+				username: $scope.su.username,
+				password: $scope.su.password,
+				fullname: $scope.su.fullname,
+				email: $scope.su.email,
+				cpNumber: $scope.su.cpNumber,
+				type: $scope.type
+			}
+			console.log($scope.newUser);
+
+			LoginService.CreateAnAccount($scope.newUser)
 			// if successful or status code == 200
 			.then(function (res) {
-				Materialize.toast("Registration successful!", 3000, 'rounded');
-				if(confirm('Proceed to login?')){
-					$window.location.reload();
-					$cookies.put('user', su.username);
-				}else{
-					//$("form#s")[0].reset();
-				}
+				console.log(res);
+				Materialize.toast("Registration successful!", 2000, 'rounded');
+				setTimeout(window.location.reload(), 5000);
+				$cookies.put('user', $scope.newUser.username);
+				$("#signUpForm").trigger("reset");
 			})
 			// if failure or status code = 404, 401, etc.
 			.catch(function (res) {
-				Materialize.toast("Username ( "+$scope.su.username+" ) already exists", 3000, 'rounded');
+				console.log(res);
+				Materialize.toast("Username ' "+$scope.newUser.username+" ' already exists", 3000, 'rounded');
 			});
 		}
 	}

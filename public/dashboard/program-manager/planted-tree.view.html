@@ -1,3 +1,16 @@
+<style>
+  .treeName{
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .stewardImage{
+    display: block;
+    padding-top: 20px;
+    margin-left: auto;
+    margin-right: auto 
+  }
+</style>
+
 <nav>
   <div class="nav-wrapper brown darken-3">
     <a class="brand-logo" href="#/dashboard"> &nbsp&nbsp LUMBR</a>
@@ -12,47 +25,48 @@
   </div>
 </nav>
 
+  <div class="btn-floating btn-large waves-effect waves-light red" style="margin-left:20px; margin-top:10px;"></div>
    <div class="manager">
       <div class="row">
         <div class="col s4">
-          <img src="../images/1.jpeg" class="materialboxed" width="300px;" height="300px;">
+          <img src="../images/tree/{{resultData.treeName}}.jpg" class="materialboxed" width="300px;" height="320px;">
         </div>
 
         <div class="col s4">
-          <div class="row">
-            {{resultData.treeName}}
-            <p><span class="label">Scientific name: </span>{{resultData.scientificName}}</p>
-            <p><span class="label">Family name: </span>{{resultData.familyName}}</p>
-            <p><span class="label">Conservation Status: </span>{{resultData.conservationStatus}}</p>
-            <p><span class="label">Uses: </span>{{resultData.uses}}</p>
-            <p><span class="label">Seed Type: </span>{{resultData.seedType}}</p>
-            <p><span class="label">Seed Count: </span>{{resultData.seedCount}}</p>
+          <div class="row plantDesc">
+            <h4 class="treeName">{{resultData.treeName}}</h4>
+            <p><span class="label"><strong>Scientific name:</strong> </span>{{resultData.scientificName}}</p>
+            <p><span class="label"><strong>Family name: </strong></span>{{resultData.familyName}}</p>
+            <p><span class="label"><strong>Conservation Status: </strong></span>{{resultData.conservationStatus}}</p>
+            <p><span class="label"><strong>Uses: </strong></span>{{resultData.uses}}</p>
+            <p><span class="label"><strong>Seed Type: </strong></span>{{resultData.seedType}}</p>
+            <p><span class="label"><strong>Seed Count: </strong></span>{{resultData.seedCount}}</p>
           </div>
 
           <div class="row">
-            
-            <p >
-              <ul class="collapsible" data-collapsible="accordion" ng-repeat="report in reports">
-                <li>
+            <h5><strong>Reports</strong></h5>
+              <ul class="collapsible" data-collapsible="accordion">
+                <li ng-repeat="report in reports">
                   <div class="collapsible-header"><i class="material-icons">filter_drama</i>
                     {{report.dateReported | date: 'MM/dd/yyyy'}}
                   </div>
-                  <div class="collapsible-body"><p>
-                      {{report.reportImg}}
+                  <div class="collapsible-body white">
+                    <p>
+                      <img ng-src="{{report.reportImg}}" width="200px" height="150px;"/><br />
                       {{report.reportTxt}}
-                  </p></div>
+                    </p>
+                  </div>
                 </li>
-                <li>
               </ul>
-            </p>
+
           </div>
         </div>
 
         <div class="col s4" align="right">
-          <ul class="collapsible steward" data-collapsible="accordion">
+          <ul class="steward" data-collapsible="accordion">
             <li class="steward">
               <div class="collapsible-header steward tooltipped" data-position="top" data-delay="50" data-tooltip="Steward information">
-              <img src="../images/1.jpeg" width="150px" height="150px;">
+                <img class="stewardImage" src="../images/user.png" width="150px" height="160px;">
               </div>
               <div class="collapsible-body white" align="left">
                 <p>
@@ -68,8 +82,14 @@
     </div>
 
 <script>
-  $(document).ready(function(){
+   $(document).ready(function(){
     $('.collapsible').collapsible({
+      accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    });
+  });
+
+   $(document).ready(function(){
+    $('.steward').collapsible({
       accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
     });
   });

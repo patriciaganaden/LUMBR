@@ -35,6 +35,7 @@
 
 			$http.post(completeUrl.join('/'), user)
 			.success(function(data) {
+				console.log("success");
 				deferred.resolve(data);
 			})
 			.error(function (data) {

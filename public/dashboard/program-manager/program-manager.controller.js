@@ -23,7 +23,7 @@ var steward = "";
 
 		$scope.plantedTrees = [];
 		
-		ProgramManagerService.getAllPlantedTrees()
+		ProgramManagerService.getAllPlantedTrees($scope.username)
 			.then(function (res) {
 				$scope.plantedTrees = res;
 			})

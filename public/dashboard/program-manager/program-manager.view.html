@@ -18,9 +18,9 @@
           <div class="col s4" ng-repeat="plantedTree in plantedTrees">
             <div class="card">
               <div class="card-image">
-                <img src="../images/1.jpeg">
+                <img src="../../images/tree/{{plantedTree.treeName}}.jpg" width="100px" height= "200px" />
                 <span class="card-title">
-                  <a href="#/dashboard/programManager/{{plantedTree.plantedtree_id}}">{{plantedTree.treeName}}</a>
+                  <a href="#/dashboard/programManager/{{plantedTree.plantedtree_id}}" class="white-text">{{plantedTree.treeName}}</a>
                 </span>
               </div>
               <div class="card-content">

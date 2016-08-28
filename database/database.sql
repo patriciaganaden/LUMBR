@@ -13,10 +13,11 @@ CREATE TABLE IF NOT EXISTS tree(
 	treeName VARCHAR(64) UNIQUE NOT NULL,
 	scientificName VARCHAR(64) NOT NULL,
 	familyName VARCHAR(64),
-	conservationStatus VARCHAR(16),
+	conservationStatus VARCHAR(64),
 	uses VARCHAR(128),
 	seedType VARCHAR(16),
-	seedCount INT(6)
+	seedCount INT(6),
+	classification VARCHAR(64)
 );
 
 CREATE TABLE IF NOT EXISTS phenology(

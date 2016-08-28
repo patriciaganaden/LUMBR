@@ -5,7 +5,7 @@
           <div class="col s12">
             <a href="" class="brand-logo">LUMBR</a>
             <ul class="right hide-on-med-and-down">
-              <li><a href="/#/login">&emsp;LOG IN&emsp;</a></li>
+              <li><a href="#/login">&emsp;LOG IN&emsp;</a></li>
             </ul>
           </div>
         </div>
@@ -15,14 +15,14 @@
     <div class="container" style="padding-top:1%;">
       <div class="signup-box white">
         <div class="row">
-          <form class="col s12" ng-submit="register()">
+          <form class="col s12" id="signUpForm">
               <div class="input-field col s12">
                 <i class="material-icons prefix">account_circle</i>
                 <input type="text" id="icon_prefix" type="text" class="validate" ng-model="su.username">
                 <label for="icon_prefix">&emsp;Username</label>
               </div>
             
-            <div class="input-field col s12">
+              <div class="input-field col s12">
                 <i class="material-icons prefix">lock_outline</i>
                 <input type="password" id="icon_prefix" type="text" class="validate" ng-model="su.password">
                 <label for="icon_prefix">&emsp;Password</label>
@@ -32,36 +32,36 @@
                 <i class="material-icons prefix">recent_actors</i>
                 <input type="text" id="icon_prefix" type="text" class="validate" ng-model="su.fullname">
                 <label for="icon_prefix">&emsp;Full Name</label>
-            </div>
+              </div>
 
-            <div class="input-field col s12">
-                <i class="material-icons prefix">markunread_mailbox</i>
-                <input type="text" id="icon_prefix" type="text" class="validate" ng-model="su.email">
-                <label for="icon_prefix">&emsp;Email</label>
-            </div>
+              <div class="input-field col s12">
+                  <i class="material-icons prefix">markunread_mailbox</i>
+                  <input type="text" id="icon_prefix" type="text" class="validate" ng-model="su.email">
+                  <label for="icon_prefix">&emsp;Email</label>
+              </div>
 
-            <div class="input-field col s12">
-                <i class="material-icons prefix">dialpad</i>
-                <input type="text" id="icon_prefix" type="text" class="validate" ng-model="su.cpNumber">
-                <label for="icon_prefix">&emsp;Cellphone Number</label>
-            </div>
+              <div class="input-field col s12">
+                  <i class="material-icons prefix">dialpad</i>
+                  <input type="text" id="icon_prefix" type="text" class="validate" ng-model="su.cpNumber">
+                  <label for="icon_prefix">&emsp;Cellphone Number</label>
+              </div>
 
-            <div class="input-field col s12">
-              <i class="material-icons prefix">info_outline</i>
-              <select>
-                <option value="1">Owner</option>
-                <option value="2">Steward</option>
-              </select>
-              <label>Account Type</label>
-            </div>
+              <div class="input-field col s12">
+                <i class="material-icons prefix">info_outline</i>
+                <select id="type">
+                  <option value="1">Owner</option>
+                  <option value="2">Steward</option>
+                </select>
+                <label>Account Type</label>
+              </div>
 
             </div>
 
             <div class="row" align="center">
-            <button type="submit" class="btn brown darken-2">SIGN UP</button>
+            <button class="btn brown darken-2" ng-click="signup()">SIGN UP</button>
             <br/><br/>
             Already have an account?
-            <a href="/#/login" class="brown-text lighten-2">Log in.</a>
+            <a href="#/login" class="brown-text lighten-2">Log in.</a>
             </div>
 
           </form>

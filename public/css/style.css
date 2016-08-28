@@ -3,27 +3,26 @@ body {
 }
 
 .input-field label {
-	color: #a1887f;
+	color: #000;
 }
 
 .input-field input[type=text]:focus + label {
-	color: #a1887f;
+	color: #4caf50;
 }
 
 .input-field input[type=text]:focus {
-	 border-bottom: 1px solid #a1887f;
-	 box-shadow: 0 1px 0 0 #a1887f;
+	 border-bottom: 1px solid #4caf50;
+	 box-shadow: 0 1px 0 0 #4caf50;
 }
 
 .input-field .prefix.active {
-	color: #a1887f;
+	color: #4caf50;
 }
 
 .option {
-	width: 250px;
+	width: 275px;
 	height: 500px;
 	float: left;
-	margin-right: 15px;
 }
 
 .menu {
@@ -31,8 +30,8 @@ body {
 	height: 250px;
 	background-color: #000000;
 	float: left;
-	margin-left: 10px;
-	margin-right: 10px;
+	margin-left: 20px;
+	margin-right: 20px;
 	padding: 20px;
 	padding-top: 200px;
 	font-size: 25px;
@@ -49,7 +48,7 @@ body {
 
 .desc {
 	padding: 20px;
-	font-size: 12px;
+	font-size: 14px;
 	float: left;
 }
 
@@ -60,4 +59,8 @@ body {
 .steward {
 	width: 200px;
 	height: 200px;
+}
+
+.plantDesc {
+	font-size: 17px;
 }

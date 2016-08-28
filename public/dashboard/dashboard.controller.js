@@ -14,7 +14,11 @@
 
 		$scope.logout = function(){
 			$cookies.remove('user');
+			$cookies.remove('type');
 		}
-
+		$scope.type = $cookies.get('type');
+		console.log($scope.type);
+		$scope.employee = 'employee';
+		$scope.employer = 'employer';
 	}
 })();

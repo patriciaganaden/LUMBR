@@ -3,11 +3,11 @@
 (function(){
 	angular
 		.module("app")
-		.controller("TreeLibCtrl", TreeLibCtrl);
+		.controller("AgroForestrySystemCtrl", AgroForestrySystemCtrl);
 		
-	TreeLibCtrl.$inject = ["$scope", "$location", "$cookies", "TreeLibService", "Pagination"];
+	AgroForestrySystemCtrl.$inject = ["$scope", "$location", "$cookies", "TreeLibService", "Pagination"];
 
-	function TreeLibCtrl($scope, $location, $cookies, TreeLibService, Pagination){
+	function AgroForestrySystemCtrl($scope, $location, $cookies, TreeLibService, Pagination){
 
 		// Redirect the user to log-in page if not yet logged-in
 		if($cookies.get('user') == null) $location.path('/login');
