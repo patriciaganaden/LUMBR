@@ -1,3 +1,10 @@
+<style>
+  .treeName{
+    font-weight: bold;
+    font-size: 20px;
+  }
+</style>
+
 <nav>
   <div class="nav-wrapper brown darken-3">
     <a class="brand-logo" href="#/dashboard"> &nbsp&nbsp LUMBR</a>
@@ -19,7 +26,7 @@
         </div>
 
         <div class="col s6">
-            {{resultData.treeName}}
+            <p class="treeName">{{resultData.treeName}}</p>
             <p><span class="label">Scientific name: </span>{{resultData.scientificName}}</p>
             <p><span class="label">Family name: </span>{{resultData.familyName}}</p>
             <p><span class="label">Conservation Status: </span>{{resultData.conservationStatus}}</p>
@@ -28,7 +35,7 @@
             <p><span class="label">Seed Count: </span>{{resultData.seedCount}}</p>
         </div>
         <form class="col s12 center-align id="addForm">
-            <blockquote class="dashdesign green-text">
+            <blockquote class="dashdesign">
               <h4 style="text-align:left;">Add Report</h4>
             </blockquote>
           <!-- start of row-->
@@ -39,7 +46,7 @@
             </div>
 
             <div class="file-field input-field col s6">
-              <div class="waves-effect waves-light green darken-3 btn">
+              <div class="waves-effect waves-light brown darken-3 btn">
                 <span>Report Picture</span>
                 <input id="uploadPicBtn" type="file" name='file' accept=".jpeg,.jpg,.png" file-model="report.pictureFile"/>
               </div>
@@ -49,7 +56,7 @@
             </div>
           </div>
           <div style="text-align:center;">
-            <input type="button" class="waves-effect waves-light green btn" value="Add Report" ng-click="AddReport()" />
+            <input type="button" class="waves-effect waves-light brown btn" value="Add Report" ng-click="AddReport()" />
           </div>
         </form>
       </div>
