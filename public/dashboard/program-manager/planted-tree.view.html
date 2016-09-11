@@ -1,13 +1,13 @@
 <style>
-  .treeName{
-    font-weight: bold;
-    font-size: 20px;
-  }
   .stewardImage{
     display: block;
     padding-top: 20px;
     margin-left: auto;
     margin-right: auto 
+  }
+  .backButton{
+    margin: 20px;
+    margin-bottom: 0px;
   }
 </style>
 
@@ -25,43 +25,39 @@
   </div>
 </nav>
   
-   <div class="manager">
-      <div class="row">
-        <div class="col s4">
-          <img src="../images/tree/{{resultData.treeName}}.jpg" class="materialboxed" width="300px;" height="320px;">
+  <div class="backButton">
+    <a href="#/dashboard/programManager" class="waves-effect waves-light btn-large brown">Back</a>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
+        <div class="col s3" align="left">
+          <img src="../images/tree/{{resultData.treeName}}.jpg" class="materialboxed" width="280px;" height="300px;">
         </div>
 
-        <div class="col s4">
-          <div class="row plantDesc">
-            <h4 class="treeName">{{resultData.treeName}}</h4>
+        <ul class="collection with-header col s6">
+          <li class="collection-header center-align"><h4>{{resultData.treeName}}</h4></li>
+          <li class="collection-item">
             <p><span class="label"><strong>Scientific name:</strong> </span>{{resultData.scientificName}}</p>
+          </li>
+          <li class="collection-item">
             <p><span class="label"><strong>Family name: </strong></span>{{resultData.familyName}}</p>
+          </li>
+          <li class="collection-item">
             <p><span class="label"><strong>Conservation Status: </strong></span>{{resultData.conservationStatus}}</p>
+          </li>
+          <li class="collection-item">
             <p><span class="label"><strong>Uses: </strong></span>{{resultData.uses}}</p>
+          </li>
+          <li class="collection-item">
             <p><span class="label"><strong>Seed Type: </strong></span>{{resultData.seedType}}</p>
+          </li>
+          <li class="collection-item">
             <p><span class="label"><strong>Seed Count: </strong></span>{{resultData.seedCount}}</p>
-          </div>
+          </li>
+        </ul>
 
-          <div class="row">
-            <h5><strong>Reports</strong></h5>
-              <ul class="collapsible" data-collapsible="accordion">
-                <li ng-repeat="report in reports">
-                  <div class="collapsible-header"><i class="material-icons">filter_drama</i>
-                    {{report.dateReported | date: 'MM/dd/yyyy'}}
-                  </div>
-                  <div class="collapsible-body white">
-                    <p>
-                      <img ng-src="{{report.reportImg}}" width="200px" height="150px;"/><br />
-                      {{report.reportTxt}}
-                    </p>
-                  </div>
-                </li>
-              </ul>
-
-          </div>
-        </div>
-
-        <div class="col s4" align="right">
+        <div class="col s3" align="right">
           <ul class="steward" data-collapsible="accordion">
             <li class="steward">
               <div class="collapsible-header steward tooltipped" data-position="top" data-delay="50" data-tooltip="Steward information">
@@ -69,27 +65,41 @@
               </div>
               <div class="collapsible-body white" align="left">
                 <p>
-                  Name: {{steward.fullname}}<br/>
-                  E-mail: {{steward.email}}<br/>
-                  Contact No.: {{steward.cpNumber}}
+                  <strong> Name: </strong> {{steward.fullname}}<br/>
+                  <strong> E-mail: </strong> {{steward.email}}<br/>
+                  <strong> Contact No.: </strong> {{steward.cpNumber}}
                 </p>
               </div>
             </li>
           </ul>
         </div>
       </div>
+
+      <div class="col s12">
+        <h5><strong>Reports</strong></h5>
+          <ul class="collapsible" data-collapsible="accordion">
+            <li ng-repeat="report in reports">
+              <div class="collapsible-header"><i class="material-icons">filter_drama</i>
+                {{report.dateReported | date: 'MM/dd/yyyy'}}
+              </div>
+              <div class="collapsible-body white">
+                <p>
+                  <img ng-src="{{report.reportImg}}" width="200px" height="150px;"/><br />
+                  {{report.reportTxt}}
+                </p>
+              </div>
+            </li>
+          </ul>
+      </div>
     </div>
+  </div>
+ 
 
 <script>
    $(document).ready(function(){
-    $('.collapsible').collapsible({
-      accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
-    });
-  });
-
-   $(document).ready(function(){
-    $('.steward').collapsible({
-      accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
-    });
+    $('.collapsible').collapsible({ accordion : false });
+    $('.tooltipped').tooltip({delay: 50});
+    $('.steward').collapsible({ accordion : false });
+    $('.materialboxed').materialbox();
   });
 </script>

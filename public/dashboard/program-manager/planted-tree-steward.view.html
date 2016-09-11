@@ -1,7 +1,7 @@
 <style>
-  .treeName{
-    font-weight: bold;
-    font-size: 20px;
+  .backButton{
+    margin: 20px;
+    margin-bottom: 0px;
   }
 </style>
 
@@ -19,53 +19,71 @@
   </div>
 </nav>
 
-   <div class="manager">
-      <div class="row">
-        <div class="col s6">
-          <img src="../../images/tree/{{resultData.treeName}}.jpg" class="materialboxed" width="300px;" height="300px;">
-        </div>
+<div class="backButton">
+  <a href="#/dashboard/programManagerSteward" class="waves-effect waves-light btn-large brown">Back</a>
+</div>
 
-        <div class="col s6">
-            <p class="treeName">{{resultData.treeName}}</p>
-            <p><span class="label">Scientific name: </span>{{resultData.scientificName}}</p>
-            <p><span class="label">Family name: </span>{{resultData.familyName}}</p>
-            <p><span class="label">Conservation Status: </span>{{resultData.conservationStatus}}</p>
-            <p><span class="label">Uses: </span>{{resultData.uses}}</p>
-            <p><span class="label">Seed Type: </span>{{resultData.seedType}}</p>
-            <p><span class="label">Seed Count: </span>{{resultData.seedCount}}</p>
-        </div>
-        <form class="col s12 center-align id="addForm">
-            <blockquote class="dashdesign">
-              <h4 style="text-align:left;">Add Report</h4>
-            </blockquote>
-          <!-- start of row-->
-          <div class="row">
-            <div class="input-field col s6">
-            <textarea id="reporttext" class="materialize-textarea" ng-model="report.reportTxt"></textarea>
-              <label for="reporttext">Report Content</label>
-            </div>
-
-            <div class="file-field input-field col s6">
-              <div class="waves-effect waves-light brown darken-3 btn">
-                <span>Report Picture</span>
-                <input id="uploadPicBtn" type="file" name='file' accept=".jpeg,.jpg,.png" file-model="report.pictureFile"/>
-              </div>
-              <div class="file-path-wrapper">
-                <input class="file-path validate" type="text">
-              </div>
-            </div>
-          </div>
-          <div style="text-align:center;">
-            <input type="button" class="waves-effect waves-light brown btn" value="Add Report" ng-click="AddReport()" />
-          </div>
-        </form>
-      </div>
+<div class="container">
+  <div class="row">
+    <div class="col s6">
+      <img src="../../images/tree/{{resultData.treeName}}.jpg" class="materialboxed" width="300px;" height="300px;">
     </div>
+
+     <ul class="collection with-header col s6">
+        <li class="collection-header center-align"><h4>{{resultData.treeName}}</h4></li>
+        <li class="collection-item">
+          <p><span class="label"><strong>Scientific name:</strong> </span>{{resultData.scientificName}}</p>
+        </li>
+        <li class="collection-item">
+          <p><span class="label"><strong>Family name: </strong></span>{{resultData.familyName}}</p>
+        </li>
+        <li class="collection-item">
+          <p><span class="label"><strong>Conservation Status: </strong></span>{{resultData.conservationStatus}}</p>
+        </li>
+        <li class="collection-item">
+          <p><span class="label"><strong>Uses: </strong></span>{{resultData.uses}}</p>
+        </li>
+        <li class="collection-item">
+          <p><span class="label"><strong>Seed Type: </strong></span>{{resultData.seedType}}</p>
+        </li>
+        <li class="collection-item">
+          <p><span class="label"><strong>Seed Count: </strong></span>{{resultData.seedCount}}</p>
+        </li>
+      </ul>
+
+    <form class="col s12 center-align" id="addForm">
+        <div>
+          <h4 class="left-align">Add Report</h4>
+        </div>
+        
+        <div class="row">
+          <div class="input-field col s6">
+            <textarea id="reporttext" class="materialize-textarea" ng-model="report.reportTxt"></textarea>
+            <label for="reporttext">Report Content</label>
+          </div>
+
+          <div class="file-field input-field col s6">
+            <div class="waves-effect waves-light brown darken-3 btn">
+              <span>Report Picture</span>
+              <input id="uploadPicBtn" type="file" name='file' accept=".jpeg,.jpg,.png" file-model="report.pictureFile"/>
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path validate" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <input type="button" class="waves-effect waves-light brown btn" value="Send" ng-click="AddReport()" />
+        </div>
+    </form>
+
+  </div>
+</div>
 
 <script>
   $(document).ready(function(){
-    $('.collapsible').collapsible({
-      accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
-    });
+    $('.collapsible').collapsible({ accordion : false });
+    $('.materialboxed').materialbox();
   });
 </script>
