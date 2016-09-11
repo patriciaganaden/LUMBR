@@ -1,3 +1,10 @@
+<style>
+  .logo{
+    padding: 20px;
+    margin: 0px;
+  }
+</style>
+
 <nav>
   <div class="nav-wrapper brown darken-3">
 
@@ -13,56 +20,65 @@
   </div>
 </nav>
 
-    <div class="dashboard row">
-      <div class="col s3">
-        <a href="#/dashboard/landClassification">
-          <div class="menu white-text" style="background-image: url('../images/1.png'); padding-top:175px;">
-            Land Capability Classification
-          </div></a>
+<div class="container">
+  <div class="row">
 
-        <div class="desc">
-            Thematic maps such as rainfall, temperature, elevation, elevation, forest covers and watershed managements are over-laid to create a land capability classification. It designates whether the area is Strictly Protected Zone, Buffer Zone, and Transition Zone.
-          </div>
+    <div class="col s12 center-align">
+      <img class="logo" src="images/logo.png" width="30%">
+    </div>
+
+    <div class="col s3">
+      <a href="#/dashboard/landClassification">
+        <div class="menu white-text" style="background-image: url('../images/1.png'); padding-top:175px;">
+        Land Capability Classification
+        </div>
+      </a>
+
+      <div class="desc">
+      Thematic maps such as rainfall, temperature, elevation, elevation, forest covers and watershed managements are over-laid to create a land capability classification. It designates whether the area is Strictly Protected Zone, Buffer Zone, and Transition Zone.
       </div>
+    </div>
 
-      <div class="col s3">
-        <a href="#/dashboard/tree-library">
-          <div class="menu white-text" style="background-image: url('../images/2.png');">
-            Tree Library
-          </div></a>
+    <div class="col s3">
+      <a href="#/dashboard/tree-library">
+        <div class="menu white-text" style="background-image: url('../images/2.png');">
+        Tree Library
+        </div>
+      </a>
 
-        <div class="desc">
-            The Tree Library shows the different native or fruit-bearing trees species as well as its uses, phenology, seed type, and seed extraction protocols.
-          </div>
+      <div class="desc">
+      The Tree Library shows the different native or fruit-bearing trees species as well as its uses, phenology, seed type, and seed extraction protocols.
       </div>
+    </div>
 
-      <div class="col s3">
-        <a href="#/dashboard/programManager" ng-show="type == employer" >
-           <div class="menu white-text" style="background-image: url('../images/3.png');">
-              Program Manager
-            </div>
+    <div class="col s3">
+      <a href="#/dashboard/programManager" ng-show="type == employer" >
+        <div class="menu white-text" style="background-image: url('../images/3.png');">
+        Program Manager
+        </div>
         </a>
         <a href="#/dashboard/programManagerSteward" ng-show="type == employee" >
-         <div class="menu white-text" style="background-image: url('../images/3.png');">
-              Program Manager
-            </div>
-        </a>
+        <div class="menu white-text" style="background-image: url('../images/3.png');">
+        Program Manager
+        </div>
+      </a>
 
-        <div class="desc">
-            The program manager heads the project on reforestation and sustainable development. He/she is the one that decides on what species will be planted on the site.
-          </div>
+      <div class="desc">
+      The program manager heads the project on reforestation and sustainable development. He/she is the one that decides on what species will be planted on the site.
       </div>
-
-      <div class="col s3">
-        <a href="#/dashboard/agroForestrySystem">
-          <div class="menu white-text" style="background-image: url('../images/4.png'); padding-top:175px;">
-            Agroforestry Technologies
-          </div>
-        </a>
-
-        <div class="desc">
-            Agroforestry system is the management of forest trees with crops and prairies. It promotes a more productive, eco-friendly and sustainable land use system.
-          </div>
-      </div>
-
     </div>
+
+    <div class="col s3">
+      <a href="#/dashboard/agroForestrySystem">
+        <div class="menu white-text" style="background-image: url('../images/4.png'); padding-top:175px;">
+        Agroforestry Technologies
+        </div>
+      </a>
+
+      <div class="desc">
+      Agroforestry system is the management of forest trees with crops and prairies. It promotes a more productive, eco-friendly and sustainable land use system.
+      </div>
+    </div>
+
+  </div>
+</div>
