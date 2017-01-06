@@ -3,6 +3,7 @@
 
 Lumbr is a web application that enables over-laying of thematic maps such as rainfall, temperature, elevation, forest cover and watershed boundaries. It encourages site-specific activities on sustainability and resilience of the watershed ecosystem and its socio-cultural aspect. It allows a supervisor to draw the boundary upon classified lands on his/her reforestation or livelihood projects. Hired stewards will monitor the area and updates will be sent to the supervisor on a regular basis. 
 
+#### FEATURES
 
 ##### Land Capability Classification
 Thematic maps such as rainfall, temperature, elevation, elevation, forest covers and watershed managements are over-laid to create a land capability classification. It designates whether the area is Strictly Protected Zone, Buffer Zone, and Transition Zone.
@@ -16,7 +17,7 @@ The program manager heads the project on reforestation and sustainable developme
 ##### Agroforestry Systems
 Agroforestry system is the management of forest trees with crops and prairies. It promotes a more productive, eco-friendly and sustainable land use system.
 
-### Installation
+### INSTALLATION
 Lumbr requires Node.js Version 4.0 or above.
 
 Install dependencies and start the server
