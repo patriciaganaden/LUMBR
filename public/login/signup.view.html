@@ -1,13 +1,11 @@
    
    <div class="navbar-fixed">
       <nav>
-        <div class="nav-wrapper brown darken-3" style="padding-top:1px; padding-left:10px;">
-          <div class="col s12">
-            <a href="" class="brand-logo">LUMBR</a>
-            <ul class="right hide-on-med-and-down">
-              <li><a href="#/login">&emsp;LOG IN&emsp;</a></li>
+        <div class="nav-wrapper" style="background-color:#B7C68B;">
+          <a class="brand-logo brown darken-4" href="#/dashboard"> &nbsp&nbsp LUMBR &nbsp&nbsp</a>
+          <ul class="right hide-on-med-and-down">
+              <li><a href="#/login" style="color:#3e2723; font-size:16px;">&emsp;LOG IN&emsp;</a></li>
             </ul>
-          </div>
         </div>
       </nav>
     </div>
@@ -15,34 +13,34 @@
     <div class="container" style="padding-top:1%;">
       <div class="signup-box white">
         <div class="row">
-          <form class="col s12" id="signUpForm">
+          <form class="col s12" id="signUpForm" name="signUpForm">
               <div class="input-field col s12">
                 <i class="material-icons prefix">account_circle</i>
-                <input type="text" id="icon_prefix" type="text" class="validate" ng-model="su.username">
+                <input type="text" id="icon_prefix" type="text" class="validate" ng-model="su.username" ng-required="true">
                 <label for="icon_prefix">&emsp;Username</label>
               </div>
             
               <div class="input-field col s12">
                 <i class="material-icons prefix">lock_outline</i>
-                <input type="password" id="icon_prefix" type="text" class="validate" ng-model="su.password">
+                <input type="password" id="icon_prefix" type="text" class="validate" ng-model="su.password" ng-required="true">
                 <label for="icon_prefix">&emsp;Password</label>
               </div>
 
               <div class="input-field col s12">
                 <i class="material-icons prefix">recent_actors</i>
-                <input type="text" id="icon_prefix" type="text" class="validate" ng-model="su.fullname">
+                <input type="text" id="icon_prefix" type="text" class="validate" ng-model="su.fullname" ng-required="true">
                 <label for="icon_prefix">&emsp;Full Name</label>
               </div>
 
               <div class="input-field col s12">
                   <i class="material-icons prefix">markunread_mailbox</i>
-                  <input type="text" id="icon_prefix" type="text" class="validate" ng-model="su.email">
+                  <input type="text" id="icon_prefix" type="text" class="validate" ng-model="su.email" ng-required="true">
                   <label for="icon_prefix">&emsp;Email</label>
               </div>
 
               <div class="input-field col s12">
                   <i class="material-icons prefix">dialpad</i>
-                  <input type="text" id="icon_prefix" type="text" class="validate" ng-model="su.cpNumber">
+                  <input type="text" id="icon_prefix" type="text" class="validate" ng-model="su.cpNumber" ng-required="true">
                   <label for="icon_prefix">&emsp;Cellphone Number</label>
               </div>
 
@@ -59,6 +57,7 @@
 
             <div class="row" align="center">
             <button class="btn brown darken-2" ng-click="signup()">SIGN UP</button>
+
             <br/><br/>
             Already have an account?
             <a href="#/login" class="brown-text lighten-2">Log in.</a>

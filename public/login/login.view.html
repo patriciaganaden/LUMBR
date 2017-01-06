@@ -1,41 +1,42 @@
 <nav>
-  <div class="nav-wrapper brown darken-3">
-    <a class="brand-logo" href="#/dashboard"> &nbsp&nbsp LUMBR</a>
+  <div class="nav-wrapper" style="background-color:#B7C68B;">
+    <a class="brand-logo brown darken-4" href="#/dashboard"> &nbsp&nbsp LUMBR &nbsp&nbsp</a>
   </div>
 </nav>
 
-    <div class="container" style="padding-top:3%;">
-      <div class="login-box white">
-        <center>
-          <img src="images/logo.png" height="195px;">
-        </center>
+<div class="container" style="padding-top:4%;">
+  <div class="login-box white" style="padding-top:4%;">
 
+    <center>
+      <img src="images/logo.png" height="160px;">
+    </center>
+
+    <div class="row">
+      <form class="col s12" ng-submit="login()">
         <div class="row">
-          <form class="col s12" ng-submit="login()">
-            <div class="row">
-              <div class="input-field col s12">
-                <i class="material-icons prefix">account_circle</i>
-                <input type="text" id="icon_prefix" type="text" class="validate" ng-model="l.username">
-                <label for="icon_prefix">&emsp;Username</label>
-              </div>
+          <div class="input-field col s12">
+            <i class="material-icons prefix">account_circle</i>
+            <input type="text" id="icon_prefix" type="text" class="validate" ng-model="l.username">
+            <label for="icon_prefix">&emsp;Username</label>
+          </div>
 
-            <div class="input-field col s12">
-                <i class="material-icons prefix">lock_outline</i>
-                <input type="password" id="icon_prefix" type="text" class="validate" ng-model="l.password">
-                <label for="icon_prefix">&emsp;Password</label>
-              </div>
-            </div>
-
-            <div class="row" align="center">
-            <button type="submit" class="btn brown darken-2">LOG IN</button>
-            <br/><br/>
-            Don't have an account?
-            <a href="#/signup" class="brown-text lighten-2">Sign up.</a>
-            </div>
-
-          </form>
-
+        <div class="input-field col s12">
+            <i class="material-icons prefix">lock_outline</i>
+            <input type="password" id="icon_prefix" type="text" class="validate" ng-model="l.password">
+            <label for="icon_prefix">&emsp;Password</label>
+          </div>
         </div>
 
-      </div>
+        <div class="row" align="center">
+        <button type="submit" class="btn brown darken-2">LOG IN</button>
+        <br/><br/>
+        Don't have an account?
+        <a href="#/signup" class="brown-text lighten-2">Sign up.</a>
+        </div>
+
+      </form>
+
     </div>
+
+  </div>
+</div>

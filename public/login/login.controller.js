@@ -57,7 +57,7 @@
 				});
 			}
 			else{
-				Materialize.toast("Fill up the form!", 2000, 'rounded');
+				Materialize.toast("Please enter your username and/or password!", 2000, 'rounded');
 			}
 		}
 
@@ -90,7 +90,8 @@
 			// if failure or status code = 404, 401, etc.
 			.catch(function (res) {
 				console.log(res);
-				Materialize.toast("Username ' "+$scope.newUser.username+" ' already exists", 3000, 'rounded');
+				Materialize.toast("Please fill out all fields!", 3000, 'rounded');
+				//Materialize.toast("Username ' "+$scope.newUser.username+" ' already exists", 3000, 'rounded');
 			});
 		}
 	}
